@@ -23,6 +23,7 @@
     
 	if( (self=[super init]) ) {
 		
+        self.touchEnabled = YES;
         
 		CGSize size = [[CCDirector sharedDirector] winSize];
 
@@ -30,12 +31,41 @@
 //		label.position =  ccp( size.width /2 , size.height/2 );
 //		[self addChild: label];
 		
-        [Common instance].tileMap.position = ccp(-1000, -500);
+        [Common instance].tileMap.position = ccp(-1211, -712);
         [self addChild:[Common instance].tileMap z:0];
 
         
 	}
 	return self;
+}
+
+- (void) ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    touchLocation = [touch locationInView:touch.view];
+    touchLocation = [[CCDirector sharedDirector] convertToGL:touchLocation];
+    //    touchLocation = [self convertToNodeSpace:touchLocation];
+    oldPos = [Common instance].tileMap.position;
+    
+//    NSLog(@"start x = %f, y = %f", touchLocation.x, touchLocation.y);
+//    NSLog(@"oldPos x = %f, y = %f", oldPos.x, oldPos.y);
+    
+}
+
+- (void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint touchLocation1 = [touch locationInView:touch.view];
+    touchLocation1 = [[CCDirector sharedDirector] convertToGL:touchLocation1];
+
+    CGPoint diff = ccpSub(touchLocation1, touchLocation);
+
+    CGPoint newPos = ccpAdd(oldPos, diff);
+    
+    [Common instance].tileMap.position = newPos;
+    
+//    NSLog(@"moved x = %f, y = %f", touchLocation1.x, touchLocation1.y);
+    
 }
 
 @end

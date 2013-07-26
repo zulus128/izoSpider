@@ -8,7 +8,11 @@
 
 #import "cocos2d.h"
 
-@interface GameLayer : CCLayer
+@interface GameLayer : CCLayer {
+    
+    CGPoint touchLocation;
+    CGPoint oldPos;
+}
 
 +(CCScene *) scene;
 

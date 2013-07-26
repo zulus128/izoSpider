@@ -30,7 +30,7 @@
 //		label.position =  ccp( size.width /2 , size.height/2 );
 //		[self addChild: label];
 		
-        [Common instance].tileMap.position = ccp(-1000,-500);
+        [Common instance].tileMap.position = ccp(-1000, -500);
         [self addChild:[Common instance].tileMap z:0];
 
         

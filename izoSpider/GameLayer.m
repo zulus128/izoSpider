@@ -9,6 +9,7 @@
 #import "GameLayer.h"
 #import "Common.h"
 #import "HudLayer.h"
+#import "Hero.h"
 
 @implementation GameLayer
 
@@ -40,6 +41,12 @@
         [Common instance].tileMap.position = ccp(-1211, -712);
         [self addChild:[Common instance].tileMap z:0];
 
+        Hero* hero = [[Hero alloc] init];
+        [[Common instance].tileMap addChild:hero z:0];
+        
+//        [self addChild:hero z:5];
+        
+        hero.position = ccp(1250, 1000);
         
 	}
 	return self;

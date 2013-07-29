@@ -32,6 +32,10 @@
         
         self.tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"map1.tmx"];
         
+        [self.tileMap layerNamed:@"bg"] setZOrder:-1];
+        //zOrder:0 for hero
+        [self.tileMap layerNamed:@"FrontBorderLayer"] setZOrder:1];
+
     }
 	return self;
 }

@@ -9,7 +9,6 @@
 #import "GameLayer.h"
 #import "Common.h"
 #import "HudLayer.h"
-#import "Hero.h"
 
 @implementation GameLayer
 
@@ -41,13 +40,14 @@
         [Common instance].tileMap.position = ccp(-1211, -712);
         [self addChild:[Common instance].tileMap z:0];
 
-        Hero* hero = [[Hero alloc] init];
+        hero = [[Hero alloc] init];
         [[Common instance].tileMap addChild:hero z:0];
         
 //        [self addChild:hero z:5];
         
-        hero.position = ccp(1250, 1000);
-        
+//        hero.position = ccp(1650, 1000);
+        hero.position = [[Common instance] positionForTileCoord:ccp(8, 10)];
+
 	}
 	return self;
 }
@@ -57,10 +57,17 @@
     UITouch *touch = [touches anyObject];
     touchLocation = [touch locationInView:touch.view];
     touchLocation = [[CCDirector sharedDirector] convertToGL:touchLocation];
-    //    touchLocation = [self convertToNodeSpace:touchLocation];
     oldPos = [Common instance].tileMap.position;
     
-//    NSLog(@"start x = %f, y = %f", touchLocation.x, touchLocation.y);
+    CGPoint touchLocation11 = [[Common instance].tileMap convertToNodeSpace:touchLocation];
+    NSLog(@"start x = %f, y = %f", touchLocation11.x, touchLocation11.y);
+    CGPoint tile = [[Common instance] tileCoordForPosition:touchLocation11];
+    NSLog(@"tile x = %f, y = %f", tile.x, tile.y);
+    
+    CGPoint pos = [[Common instance] positionForTileCoord:tile];
+    NSLog(@"pos from tile x = %f, y = %f", pos.x, pos.y);
+    hero.position = pos;
+
 //    NSLog(@"oldPos x = %f, y = %f", oldPos.x, oldPos.y);
     
 }

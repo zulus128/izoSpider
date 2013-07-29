@@ -7,8 +7,11 @@
 //
 
 #import "cocos2d.h"
+#import "Hero.h"
 
 @interface GameLayer : CCLayer {
+    
+    Hero* hero;
     
     CGPoint touchLocation;
     CGPoint oldPos;

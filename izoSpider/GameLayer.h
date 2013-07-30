@@ -11,12 +11,14 @@
 
 @interface GameLayer : CCLayer {
     
-    Hero* hero;
     
     CGPoint touchLocation;
     CGPoint oldPos;
 }
 
 +(CCScene *) scene;
+
+@property (nonatomic, retain) NSMutableArray *spOpenSteps;
+@property (nonatomic, retain) NSMutableArray *spClosedSteps;
 
 @end

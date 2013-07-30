@@ -475,6 +475,7 @@
 		9CF028F7179FEE3B00EFBC35 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF028F6179FEE3B00EFBC35 /* IntroLayer.m */; };
 		9CF028FF179FEED000EFBC35 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF028FE179FEED000EFBC35 /* GameLayer.m */; };
 		9CF02912179FF75600EFBC35 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF02911179FF75600EFBC35 /* Common.m */; };
+		9CF02AB317A76766006CE7BE /* ShortestPathStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF02AB217A76766006CE7BE /* ShortestPathStep.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1097,6 +1098,8 @@
 		9CF028FE179FEED000EFBC35 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		9CF02910179FF75600EFBC35 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		9CF02911179FF75600EFBC35 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		9CF02AB117A76766006CE7BE /* ShortestPathStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortestPathStep.h; sourceTree = "<group>"; };
+		9CF02AB217A76766006CE7BE /* ShortestPathStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortestPathStep.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1537,6 +1540,8 @@
 				9CF028F0179FEE3B00EFBC35 /* AppDelegate.m */,
 				9CF028F2179FEE3B00EFBC35 /* HelloWorldLayer.h */,
 				9CF028F3179FEE3B00EFBC35 /* HelloWorldLayer.m */,
+				9CF02AB117A76766006CE7BE /* ShortestPathStep.h */,
+				9CF02AB217A76766006CE7BE /* ShortestPathStep.m */,
 				9C3BCAA717A63E2E008AE171 /* Hero.h */,
 				9C3BCAA817A63E2E008AE171 /* Hero.m */,
 				9CF028FD179FEED000EFBC35 /* GameLayer.h */,
@@ -2472,6 +2477,7 @@
 				9CF02912179FF75600EFBC35 /* Common.m in Sources */,
 				9CDDAA7917A2B08000A9B41D /* HudLayer.m in Sources */,
 				9C3BCAA917A63E2E008AE171 /* Hero.m in Sources */,
+				9CF02AB317A76766006CE7BE /* ShortestPathStep.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

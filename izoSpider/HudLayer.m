@@ -7,6 +7,7 @@
 //
 
 #import "HudLayer.h"
+#import "Common.h"
 
 @implementation HudLayer
 
@@ -30,7 +31,9 @@
         CCSprite *spider_t1 = [CCSprite spriteWithFile:@"come_to_the_spider_button_active.png"];
         CCMenuItemSprite *itemspider = [CCMenuItemSprite itemWithNormalSprite:spider selectedSprite:spider_t1 block:^(id sender) {
             
-            NSLog(@"spider pressed");
+//            NSLog(@"spider pressed");
+            [[Common instance] setViewpointCenterToHero];
+            
         }];
         [itemspider setPosition:ccp(75, size.height - 50)];
         

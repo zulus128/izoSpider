@@ -41,6 +41,10 @@
         [[self.tileMap layerNamed:@"f3"] setZOrder:5];
         [[self.tileMap layerNamed:@"f4"] setZOrder:6];
 
+        self.hero = [[Hero alloc] init];
+        [self.tileMap addChild:self.hero z:0];
+        self.hero.position = [self positionForTileCoord:ccp(8, 10)];
+
 
     }
 	return self;
@@ -103,6 +107,85 @@
 
     return [[self.tileMap layerNamed:BACK_LAYER] positionAt:tile];
 
+}
+
+- (int) tileIdforTileCoord:(CGPoint)tile {
+
+//    tile = ccp(tile.x, tile.y - 1);
+    
+    return [[self.tileMap layerNamed:BACK_LAYER] tileGIDAt:tile];
+
+}
+
+- (void) setViewpointCenterToHero {
+    
+    CGPoint position = self.hero.position;
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    
+    int x = MAX(position.x, winSize.width / 2);
+    int y = MAX(position.y, winSize.height / 2);
+    x = MIN(x, ([Common instance].tileMap.mapSize.width * [Common instance].tileMap.tileSize.width)
+            - winSize.width / 2);
+    y = MIN(y, ([Common instance].tileMap.mapSize.height * [Common instance].tileMap.tileSize.height)
+            - winSize.height/2);
+    CGPoint actualPosition = ccp(x, y);
+    
+    CGPoint centerOfView = ccp(winSize.width/2, winSize.height/2);
+    CGPoint viewPoint = ccpSub(centerOfView, actualPosition);
+    //    self.position = ccpMult(viewPoint, 0.5f);
+    self.tileMap.position = viewPoint;
+    
+}
+
+
+-(BOOL) isWallAtTileCoord:(CGPoint)tileCoord {
+
+    int gid = [self tileIdforTileCoord:tileCoord];
+    return (gid != TILE_NET_GID);
+}
+
+- (BOOL)isValidTileCoord:(CGPoint)tileCoord {
+    
+    if (tileCoord.x < 0 || tileCoord.y < 0 ||
+        tileCoord.x >= _tileMap.mapSize.width ||
+        tileCoord.y >= _tileMap.mapSize.height) {
+        return FALSE;
+    } else {
+        return TRUE;
+    }
+}
+
+
+- (NSArray *)walkableAdjacentTilesCoordForTileCoord:(CGPoint)tileCoord {
+    
+	NSMutableArray *tmp = [NSMutableArray arrayWithCapacity:4];
+    
+	// Top
+	CGPoint p = CGPointMake(tileCoord.x, tileCoord.y - 1);
+	if ([self isValidTileCoord:p] && ![self isWallAtTileCoord:p]) {
+		[tmp addObject:[NSValue valueWithCGPoint:p]];
+	}
+    
+	// Left
+	p = CGPointMake(tileCoord.x - 1, tileCoord.y);
+	if ([self isValidTileCoord:p] && ![self isWallAtTileCoord:p]) {
+		[tmp addObject:[NSValue valueWithCGPoint:p]];
+	}
+    
+	// Bottom
+	p = CGPointMake(tileCoord.x, tileCoord.y + 1);
+	if ([self isValidTileCoord:p] && ![self isWallAtTileCoord:p]) {
+		[tmp addObject:[NSValue valueWithCGPoint:p]];
+	}
+    
+	// Right
+	p = CGPointMake(tileCoord.x + 1, tileCoord.y);
+	if ([self isValidTileCoord:p] && ![self isWallAtTileCoord:p]) {
+		[tmp addObject:[NSValue valueWithCGPoint:p]];
+	}
+    
+	return [NSArray arrayWithArray:tmp];
 }
 
 @end

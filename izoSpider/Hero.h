@@ -10,4 +10,5 @@
 
 @interface Hero : CCNode
 
+
 @end

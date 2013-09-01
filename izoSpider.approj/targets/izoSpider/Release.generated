@@ -32,7 +32,28 @@
         {
             "language": "objc", 
             "header_paths": [], 
+            "source": "izoSpider/Hero.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "izoSpider/HudLayer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
             "source": "izoSpider/IntroLayer.m", 
+            "flags": [], 
+            "defines": {}
+        }, 
+        {
+            "language": "objc", 
+            "header_paths": [], 
+            "source": "izoSpider/ShortestPathStep.m", 
             "flags": [], 
             "defines": {}
         }, 
@@ -817,10 +838,6 @@
     ], 
     "assets": [
         {
-            "asset": "izoSpider/Resources/Default.png", 
-            "target": "Default.png"
-        }, 
-        {
             "asset": "izoSpider/Resources/Default@2x.png", 
             "target": "Default@2x.png"
         }, 
@@ -831,6 +848,10 @@
         {
             "asset": "izoSpider/Resources/Default-Landscape~ipad.png", 
             "target": "Default-Landscape~ipad.png"
+        }, 
+        {
+            "asset": "izoSpider/Resources/Default.png", 
+            "target": "Default.png"
         }, 
         {
             "asset": "izoSpider/Resources/Icon-72.png", 
@@ -883,6 +904,726 @@
         {
             "asset": "tile_tree_164x241.png", 
             "target": "tile_tree_164x241.png"
+        }, 
+        {
+            "asset": "come_to_the_spider_button_active.png", 
+            "target": "come_to_the_spider_button_active.png"
+        }, 
+        {
+            "asset": "come_to_the_spider_button.png", 
+            "target": "come_to_the_spider_button.png"
+        }, 
+        {
+            "asset": "spider_calm_s (1).png", 
+            "target": "spider_calm_s (1).png"
+        }, 
+        {
+            "asset": "spider_calm_s (2).png", 
+            "target": "spider_calm_s (2).png"
+        }, 
+        {
+            "asset": "spider_calm_s (3).png", 
+            "target": "spider_calm_s (3).png"
+        }, 
+        {
+            "asset": "spider_calm_s (4).png", 
+            "target": "spider_calm_s (4).png"
+        }, 
+        {
+            "asset": "spider_calm_s (5).png", 
+            "target": "spider_calm_s (5).png"
+        }, 
+        {
+            "asset": "spider_calm_s (6).png", 
+            "target": "spider_calm_s (6).png"
+        }, 
+        {
+            "asset": "spider_calm_s (7).png", 
+            "target": "spider_calm_s (7).png"
+        }, 
+        {
+            "asset": "spider_calm_s (8).png", 
+            "target": "spider_calm_s (8).png"
+        }, 
+        {
+            "asset": "spider_calm_s (9).png", 
+            "target": "spider_calm_s (9).png"
+        }, 
+        {
+            "asset": "spider_calm_s (10).png", 
+            "target": "spider_calm_s (10).png"
+        }, 
+        {
+            "asset": "spider_walk_s (1).png", 
+            "target": "spider_walk_s (1).png"
+        }, 
+        {
+            "asset": "spider_walk_s (2).png", 
+            "target": "spider_walk_s (2).png"
+        }, 
+        {
+            "asset": "spider_walk_s (3).png", 
+            "target": "spider_walk_s (3).png"
+        }, 
+        {
+            "asset": "spider_walk_s (4).png", 
+            "target": "spider_walk_s (4).png"
+        }, 
+        {
+            "asset": "spider_walk_s (5).png", 
+            "target": "spider_walk_s (5).png"
+        }, 
+        {
+            "asset": "spider_walk_s (6).png", 
+            "target": "spider_walk_s (6).png"
+        }, 
+        {
+            "asset": "spider_walk_s (7).png", 
+            "target": "spider_walk_s (7).png"
+        }, 
+        {
+            "asset": "spider_walk_s (8).png", 
+            "target": "spider_walk_s (8).png"
+        }, 
+        {
+            "asset": "spider_walk_s (9).png", 
+            "target": "spider_walk_s (9).png"
+        }, 
+        {
+            "asset": "spider_walk_s (10).png", 
+            "target": "spider_walk_s (10).png"
+        }, 
+        {
+            "asset": "spider_walk_s (11).png", 
+            "target": "spider_walk_s (11).png"
+        }, 
+        {
+            "asset": "spider_walk_s (12).png", 
+            "target": "spider_walk_s (12).png"
+        }, 
+        {
+            "asset": "spider_walk_s (13).png", 
+            "target": "spider_walk_s (13).png"
+        }, 
+        {
+            "asset": "spider_walk_s (14).png", 
+            "target": "spider_walk_s (14).png"
+        }, 
+        {
+            "asset": "spider_weave_s (1).png", 
+            "target": "spider_weave_s (1).png"
+        }, 
+        {
+            "asset": "spider_weave_s (2).png", 
+            "target": "spider_weave_s (2).png"
+        }, 
+        {
+            "asset": "spider_weave_s (3).png", 
+            "target": "spider_weave_s (3).png"
+        }, 
+        {
+            "asset": "spider_weave_s (4).png", 
+            "target": "spider_weave_s (4).png"
+        }, 
+        {
+            "asset": "spider_weave_s (5).png", 
+            "target": "spider_weave_s (5).png"
+        }, 
+        {
+            "asset": "spider_weave_s (6).png", 
+            "target": "spider_weave_s (6).png"
+        }, 
+        {
+            "asset": "spider_weave_s (7).png", 
+            "target": "spider_weave_s (7).png"
+        }, 
+        {
+            "asset": "spider_weave_s (8).png", 
+            "target": "spider_weave_s (8).png"
+        }, 
+        {
+            "asset": "spider_weave_s (9).png", 
+            "target": "spider_weave_s (9).png"
+        }, 
+        {
+            "asset": "spider_weave_s (10).png", 
+            "target": "spider_weave_s (10).png"
+        }, 
+        {
+            "asset": "spider_weave_s (11).png", 
+            "target": "spider_weave_s (11).png"
+        }, 
+        {
+            "asset": "spider_weave_s (12).png", 
+            "target": "spider_weave_s (12).png"
+        }, 
+        {
+            "asset": "spider_weave_s (13).png", 
+            "target": "spider_weave_s (13).png"
+        }, 
+        {
+            "asset": "spider_weave_s (14).png", 
+            "target": "spider_weave_s (14).png"
+        }, 
+        {
+            "asset": "spider_weave_s (15).png", 
+            "target": "spider_weave_s (15).png"
+        }, 
+        {
+            "asset": "spider_weave_s (16).png", 
+            "target": "spider_weave_s (16).png"
+        }, 
+        {
+            "asset": "spider_calm_w (1).png", 
+            "target": "spider_calm_w (1).png"
+        }, 
+        {
+            "asset": "spider_calm_w (2).png", 
+            "target": "spider_calm_w (2).png"
+        }, 
+        {
+            "asset": "spider_calm_w (3).png", 
+            "target": "spider_calm_w (3).png"
+        }, 
+        {
+            "asset": "spider_calm_w (4).png", 
+            "target": "spider_calm_w (4).png"
+        }, 
+        {
+            "asset": "spider_calm_w (5).png", 
+            "target": "spider_calm_w (5).png"
+        }, 
+        {
+            "asset": "spider_calm_w (6).png", 
+            "target": "spider_calm_w (6).png"
+        }, 
+        {
+            "asset": "spider_calm_w (7).png", 
+            "target": "spider_calm_w (7).png"
+        }, 
+        {
+            "asset": "spider_calm_w (8).png", 
+            "target": "spider_calm_w (8).png"
+        }, 
+        {
+            "asset": "spider_calm_w (9).png", 
+            "target": "spider_calm_w (9).png"
+        }, 
+        {
+            "asset": "spider_calm_w (10).png", 
+            "target": "spider_calm_w (10).png"
+        }, 
+        {
+            "asset": "spider_walk_w (1).png", 
+            "target": "spider_walk_w (1).png"
+        }, 
+        {
+            "asset": "spider_walk_w (2).png", 
+            "target": "spider_walk_w (2).png"
+        }, 
+        {
+            "asset": "spider_walk_w (3).png", 
+            "target": "spider_walk_w (3).png"
+        }, 
+        {
+            "asset": "spider_walk_w (4).png", 
+            "target": "spider_walk_w (4).png"
+        }, 
+        {
+            "asset": "spider_walk_w (5).png", 
+            "target": "spider_walk_w (5).png"
+        }, 
+        {
+            "asset": "spider_walk_w (6).png", 
+            "target": "spider_walk_w (6).png"
+        }, 
+        {
+            "asset": "spider_walk_w (7).png", 
+            "target": "spider_walk_w (7).png"
+        }, 
+        {
+            "asset": "spider_walk_w (8).png", 
+            "target": "spider_walk_w (8).png"
+        }, 
+        {
+            "asset": "spider_walk_w (9).png", 
+            "target": "spider_walk_w (9).png"
+        }, 
+        {
+            "asset": "spider_walk_w (10).png", 
+            "target": "spider_walk_w (10).png"
+        }, 
+        {
+            "asset": "spider_walk_w (11).png", 
+            "target": "spider_walk_w (11).png"
+        }, 
+        {
+            "asset": "spider_walk_w (12).png", 
+            "target": "spider_walk_w (12).png"
+        }, 
+        {
+            "asset": "spider_walk_w (13).png", 
+            "target": "spider_walk_w (13).png"
+        }, 
+        {
+            "asset": "spider_walk_w (14).png", 
+            "target": "spider_walk_w (14).png"
+        }, 
+        {
+            "asset": "spider_weave_w (1).png", 
+            "target": "spider_weave_w (1).png"
+        }, 
+        {
+            "asset": "spider_weave_w (2).png", 
+            "target": "spider_weave_w (2).png"
+        }, 
+        {
+            "asset": "spider_weave_w (3).png", 
+            "target": "spider_weave_w (3).png"
+        }, 
+        {
+            "asset": "spider_weave_w (4).png", 
+            "target": "spider_weave_w (4).png"
+        }, 
+        {
+            "asset": "spider_weave_w (5).png", 
+            "target": "spider_weave_w (5).png"
+        }, 
+        {
+            "asset": "spider_weave_w (6).png", 
+            "target": "spider_weave_w (6).png"
+        }, 
+        {
+            "asset": "spider_weave_w (7).png", 
+            "target": "spider_weave_w (7).png"
+        }, 
+        {
+            "asset": "spider_weave_w (8).png", 
+            "target": "spider_weave_w (8).png"
+        }, 
+        {
+            "asset": "spider_weave_w (9).png", 
+            "target": "spider_weave_w (9).png"
+        }, 
+        {
+            "asset": "spider_weave_w (10).png", 
+            "target": "spider_weave_w (10).png"
+        }, 
+        {
+            "asset": "spider_weave_w (11).png", 
+            "target": "spider_weave_w (11).png"
+        }, 
+        {
+            "asset": "spider_weave_w (12).png", 
+            "target": "spider_weave_w (12).png"
+        }, 
+        {
+            "asset": "spider_weave_w (13).png", 
+            "target": "spider_weave_w (13).png"
+        }, 
+        {
+            "asset": "spider_weave_w (14).png", 
+            "target": "spider_weave_w (14).png"
+        }, 
+        {
+            "asset": "spider_weave_w (15).png", 
+            "target": "spider_weave_w (15).png"
+        }, 
+        {
+            "asset": "spider_weave_w (16).png", 
+            "target": "spider_weave_w (16).png"
+        }, 
+        {
+            "asset": "mos_ landing_s (1).png", 
+            "target": "mos_ landing_s (1).png"
+        }, 
+        {
+            "asset": "mos_ landing_s (2).png", 
+            "target": "mos_ landing_s (2).png"
+        }, 
+        {
+            "asset": "mos_ landing_s (3).png", 
+            "target": "mos_ landing_s (3).png"
+        }, 
+        {
+            "asset": "mos_ landing_s (4).png", 
+            "target": "mos_ landing_s (4).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (1).png", 
+            "target": "mos_extrication_s (1).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (2).png", 
+            "target": "mos_extrication_s (2).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (3).png", 
+            "target": "mos_extrication_s (3).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (4).png", 
+            "target": "mos_extrication_s (4).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (5).png", 
+            "target": "mos_extrication_s (5).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (6).png", 
+            "target": "mos_extrication_s (6).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (7).png", 
+            "target": "mos_extrication_s (7).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (8).png", 
+            "target": "mos_extrication_s (8).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (9).png", 
+            "target": "mos_extrication_s (9).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (10).png", 
+            "target": "mos_extrication_s (10).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (11).png", 
+            "target": "mos_extrication_s (11).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (12).png", 
+            "target": "mos_extrication_s (12).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (13).png", 
+            "target": "mos_extrication_s (13).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (15).png", 
+            "target": "mos_extrication_s (15).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (14).png", 
+            "target": "mos_extrication_s (14).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (16).png", 
+            "target": "mos_extrication_s (16).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (17).png", 
+            "target": "mos_extrication_s (17).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (18).png", 
+            "target": "mos_extrication_s (18).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (20).png", 
+            "target": "mos_extrication_s (20).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (19).png", 
+            "target": "mos_extrication_s (19).png"
+        }, 
+        {
+            "asset": "mos_fly_s (1).png", 
+            "target": "mos_fly_s (1).png"
+        }, 
+        {
+            "asset": "mos_fly_s (2).png", 
+            "target": "mos_fly_s (2).png"
+        }, 
+        {
+            "asset": "mos_fly_s (3).png", 
+            "target": "mos_fly_s (3).png"
+        }, 
+        {
+            "asset": "mos_fly_s (4).png", 
+            "target": "mos_fly_s (4).png"
+        }, 
+        {
+            "asset": "mos_fly_s (5).png", 
+            "target": "mos_fly_s (5).png"
+        }, 
+        {
+            "asset": "mos_fly_s (6).png", 
+            "target": "mos_fly_s (6).png"
+        }, 
+        {
+            "asset": "mos_fly_s (7).png", 
+            "target": "mos_fly_s (7).png"
+        }, 
+        {
+            "asset": "mos_fly_s (8).png", 
+            "target": "mos_fly_s (8).png"
+        }, 
+        {
+            "asset": "mos_fly_s (9).png", 
+            "target": "mos_fly_s (9).png"
+        }, 
+        {
+            "asset": "mos_fly_s (10).png", 
+            "target": "mos_fly_s (10).png"
+        }, 
+        {
+            "asset": "mos_fly_s (11).png", 
+            "target": "mos_fly_s (11).png"
+        }, 
+        {
+            "asset": "mos_fly_s (12).png", 
+            "target": "mos_fly_s (12).png"
+        }, 
+        {
+            "asset": "mos_fly_s (13).png", 
+            "target": "mos_fly_s (13).png"
+        }, 
+        {
+            "asset": "mos_fly_s (14).png", 
+            "target": "mos_fly_s (14).png"
+        }, 
+        {
+            "asset": "mos_fly_s (16).png", 
+            "target": "mos_fly_s (16).png"
+        }, 
+        {
+            "asset": "mos_fly_s (15).png", 
+            "target": "mos_fly_s (15).png"
+        }, 
+        {
+            "asset": "mos_fly_s (17).png", 
+            "target": "mos_fly_s (17).png"
+        }, 
+        {
+            "asset": "mos_fly_s (18).png", 
+            "target": "mos_fly_s (18).png"
+        }, 
+        {
+            "asset": "mos_fly_s (19).png", 
+            "target": "mos_fly_s (19).png"
+        }, 
+        {
+            "asset": "mos_fly_s (20).png", 
+            "target": "mos_fly_s (20).png"
+        }, 
+        {
+            "asset": "mos_fly_s (21).png", 
+            "target": "mos_fly_s (21).png"
+        }, 
+        {
+            "asset": "mos_fly_s (22).png", 
+            "target": "mos_fly_s (22).png"
+        }, 
+        {
+            "asset": "mos_fly_s (23).png", 
+            "target": "mos_fly_s (23).png"
+        }, 
+        {
+            "asset": "mos_fly_s (24).png", 
+            "target": "mos_fly_s (24).png"
+        }, 
+        {
+            "asset": "mos_fly_s (25).png", 
+            "target": "mos_fly_s (25).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (1).png", 
+            "target": "mos_extrication_w (1).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (2).png", 
+            "target": "mos_extrication_w (2).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (3).png", 
+            "target": "mos_extrication_w (3).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (4).png", 
+            "target": "mos_extrication_w (4).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (5).png", 
+            "target": "mos_extrication_w (5).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (6).png", 
+            "target": "mos_extrication_w (6).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (7).png", 
+            "target": "mos_extrication_w (7).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (8).png", 
+            "target": "mos_extrication_w (8).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (9).png", 
+            "target": "mos_extrication_w (9).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (10).png", 
+            "target": "mos_extrication_w (10).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (11).png", 
+            "target": "mos_extrication_w (11).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (12).png", 
+            "target": "mos_extrication_w (12).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (13).png", 
+            "target": "mos_extrication_w (13).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (14).png", 
+            "target": "mos_extrication_w (14).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (15).png", 
+            "target": "mos_extrication_w (15).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (16).png", 
+            "target": "mos_extrication_w (16).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (17).png", 
+            "target": "mos_extrication_w (17).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (18).png", 
+            "target": "mos_extrication_w (18).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (19).png", 
+            "target": "mos_extrication_w (19).png"
+        }, 
+        {
+            "asset": "mos_extrication_w (20).png", 
+            "target": "mos_extrication_w (20).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (1).png", 
+            "target": "mos_fly_ w (1).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (2).png", 
+            "target": "mos_fly_ w (2).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (3).png", 
+            "target": "mos_fly_ w (3).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (4).png", 
+            "target": "mos_fly_ w (4).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (5).png", 
+            "target": "mos_fly_ w (5).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (6).png", 
+            "target": "mos_fly_ w (6).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (7).png", 
+            "target": "mos_fly_ w (7).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (8).png", 
+            "target": "mos_fly_ w (8).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (9).png", 
+            "target": "mos_fly_ w (9).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (10).png", 
+            "target": "mos_fly_ w (10).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (11).png", 
+            "target": "mos_fly_ w (11).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (12).png", 
+            "target": "mos_fly_ w (12).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (13).png", 
+            "target": "mos_fly_ w (13).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (14).png", 
+            "target": "mos_fly_ w (14).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (15).png", 
+            "target": "mos_fly_ w (15).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (16).png", 
+            "target": "mos_fly_ w (16).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (17).png", 
+            "target": "mos_fly_ w (17).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (18).png", 
+            "target": "mos_fly_ w (18).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (19).png", 
+            "target": "mos_fly_ w (19).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (20).png", 
+            "target": "mos_fly_ w (20).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (21).png", 
+            "target": "mos_fly_ w (21).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (22).png", 
+            "target": "mos_fly_ w (22).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (23).png", 
+            "target": "mos_fly_ w (23).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (24).png", 
+            "target": "mos_fly_ w (24).png"
+        }, 
+        {
+            "asset": "mos_fly_ w (25).png", 
+            "target": "mos_fly_ w (25).png"
+        }, 
+        {
+            "asset": "mos_landing_w  (2).png", 
+            "target": "mos_landing_w  (2).png"
+        }, 
+        {
+            "asset": "mos_landing_w  (3).png", 
+            "target": "mos_landing_w  (3).png"
+        }, 
+        {
+            "asset": "mos_landing_w  (4).png", 
+            "target": "mos_landing_w  (4).png"
+        }, 
+        {
+            "asset": "mos_landing_w  (5).png", 
+            "target": "mos_landing_w  (5).png"
         }
     ], 
     "type": "app", 
@@ -906,6 +1647,11 @@
             "type": "iquote", 
             "header_path": "izoSpider-project-headers.hmap", 
             "hmap": {
+                "Hero.h": {
+                    "prefix": "izoSpider/", 
+                    "suffix": "Hero.h", 
+                    "key": "Hero.h"
+                }, 
                 "CCTextureCache.h": {
                     "prefix": "izoSpider/libs/cocos2d/", 
                     "suffix": "CCTextureCache.h", 
@@ -996,10 +1742,10 @@
                     "suffix": "CCAnimationCache.h", 
                     "key": "CCAnimationCache.h"
                 }, 
-                "ccFPSImages.h": {
+                "cocos2d.h": {
                     "prefix": "izoSpider/libs/cocos2d/", 
-                    "suffix": "ccFPSImages.h", 
-                    "key": "ccFPSImages.h"
+                    "suffix": "cocos2d.h", 
+                    "key": "cocos2d.h"
                 }, 
                 "CCGrid.h": {
                     "prefix": "izoSpider/libs/cocos2d/", 
@@ -1181,6 +1927,11 @@
                     "suffix": "TGAlib.h", 
                     "key": "TGAlib.h"
                 }, 
+                "HudLayer.h": {
+                    "prefix": "izoSpider/", 
+                    "suffix": "HudLayer.h", 
+                    "key": "HudLayer.h"
+                }, 
                 "utlist.h": {
                     "prefix": "izoSpider/libs/cocos2d/Support/", 
                     "suffix": "utlist.h", 
@@ -1200,6 +1951,11 @@
                     "prefix": "izoSpider/libs/cocos2d/", 
                     "suffix": "CCScene.h", 
                     "key": "CCScene.h"
+                }, 
+                "ShortestPathStep.h": {
+                    "prefix": "izoSpider/", 
+                    "suffix": "ShortestPathStep.h", 
+                    "key": "ShortestPathStep.h"
                 }, 
                 "CCActionTiledGrid.h": {
                     "prefix": "izoSpider/libs/cocos2d/", 
@@ -1346,10 +2102,10 @@
                     "suffix": "CCDirectorIOS.h", 
                     "key": "CCDirectorIOS.h"
                 }, 
-                "cocos2d.h": {
+                "ccFPSImages.h": {
                     "prefix": "izoSpider/libs/cocos2d/", 
-                    "suffix": "cocos2d.h", 
-                    "key": "cocos2d.h"
+                    "suffix": "ccFPSImages.h", 
+                    "key": "ccFPSImages.h"
                 }, 
                 "CCAction.h": {
                     "prefix": "izoSpider/libs/cocos2d/", 

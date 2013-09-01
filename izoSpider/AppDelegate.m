@@ -136,6 +136,17 @@
 	// make main window visible
 	[window_ makeKeyAndVisible];
 	
+    
+//#ifdef ANDROID
+//    [UIScreen mainScreen].currentMode =
+//    [UIScreenMode emulatedMode:UIScreenIPhone3GEmulationMode];
+//#endif
+    
+#ifdef ANDROID
+    [UIScreen mainScreen].currentMode =
+    [UIScreenMode emulatedMode:UIScreenAspectFitEmulationMode];
+#endif
+    
 	return YES;
 }
 

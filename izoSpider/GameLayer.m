@@ -31,22 +31,10 @@
 		
         self.touchEnabled = YES;
         
-		CGSize size = [[CCDirector sharedDirector] winSize];
+//		CGSize size = [[CCDirector sharedDirector] winSize];
 
-//		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-//		label.position =  ccp( size.width /2 , size.height/2 );
-//		[self addChild: label];
-		
         [Common instance].tileMap.position = ccp(-1211, -712);
         [self addChild:[Common instance].tileMap z:0];
-
-//        [Common instance].hero = [[Hero alloc] init];
-//        [[Common instance].tileMap addChild:hero z:0];
-        
-//        [self addChild:hero z:5];
-        
-//        hero.position = ccp(1650, 1000);
-//        hero.position = [[Common instance] positionForTileCoord:ccp(8, 10)];
 
 	}
 	return self;
@@ -66,12 +54,15 @@
     
     CGPoint pos = [[Common instance] positionForTileCoord:tile];
 //    NSLog(@"pos from tile x = %f, y = %f", pos.x, pos.y);
-    [Common instance].hero.position = pos;
+//    [Common instance].hero.position = pos;
+    
+    if([Common instance].hero.shortestPath == nil)
+        [self moveToward:pos];
 
 //    NSLog(@"oldPos x = %f, y = %f", oldPos.x, oldPos.y);
     
-    int gid = [[Common instance] tileIdforTileCoord:tile];
-    NSLog(@"gid = %d", gid);
+//    int gid = [[Common instance] tileIdforTileCoord:tile];
+//    NSLog(@"gid = %d", gid);
 }
 
 - (void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -90,7 +81,7 @@
     
 }
 
-- (void)moveToward:(CGPoint)target {
+- (void) moveToward:(CGPoint)target {
     
     // Get current tile coordinate and desired tile coord
     CGPoint fromTileCoord = [[Common instance] tileCoordForPosition:[Common instance].hero.position];
@@ -106,19 +97,142 @@
     // In our case it's really easy, because only wall are unwalkable
     if ([[Common instance] isWallAtTileCoord:toTileCoord]) {
 //        [[SimpleAudioEngine sharedEngine] playEffect:@"hitWall.wav"];
+
+        NSLog(@"A Wall there! :P");
+
         return;
     }
     
     NSLog(@"From: %@", NSStringFromCGPoint(fromTileCoord));
     NSLog(@"To: %@", NSStringFromCGPoint(toTileCoord));
+    
+    
+//    BOOL pathFound = NO;
+    self.spOpenSteps = [[[NSMutableArray alloc] init] autorelease];
+    self.spClosedSteps = [[[NSMutableArray alloc] init] autorelease];
+    
+    // Start by adding the from position to the open list
+    [self insertInOpenSteps:[[[ShortestPathStep alloc] initWithPosition:fromTileCoord] autorelease]];
+    
+    do {
+        // Get the lowest F cost step
+        // Because the list is ordered, the first step is always the one with the lowest F cost
+        ShortestPathStep *currentStep = [self.spOpenSteps objectAtIndex:0];
+        
+        // Add the current step to the closed set
+        [self.spClosedSteps addObject:currentStep];
+        
+        // Remove it from the open list
+        // Note that if we wanted to first removing from the open list, care should be taken to the memory
+        [self.spOpenSteps removeObjectAtIndex:0];
+        
+        // If the currentStep is the desired tile coordinate, we are done!
+        if (CGPointEqualToPoint(currentStep.position, toTileCoord)) {
+            
+            [self constructPathAndStartAnimationFromStep:currentStep];
+            [[Common instance].hero go];
+            
+//            pathFound = YES;
+//            ShortestPathStep *tmpStep = currentStep;
+//            NSLog(@"PATH FOUND :");
+//            do {
+//                NSLog(@"%@", tmpStep);
+//                tmpStep = tmpStep.parent; // Go backward
+//            } while (tmpStep != nil); // Until there is not more parent
+            
+            self.spOpenSteps = nil; // Set to nil to release unused memory
+            self.spClosedSteps = nil; // Set to nil to release unused memory
+            break;
+        }
+        
+        // Get the adjacent tiles coord of the current step
+        NSArray *adjSteps = [[Common instance] walkableAdjacentTilesCoordForTileCoord:currentStep.position];
+        for (NSValue *v in adjSteps) {
+            ShortestPathStep *step = [[ShortestPathStep alloc] initWithPosition:[v CGPointValue]];
+            
+            // Check if the step isn't already in the closed set
+            if ([self.spClosedSteps containsObject:step]) {
+                [step release]; // Must releasing it to not leaking memory ;-)
+                continue; // Ignore it
+            }
+            
+            // Compute the cost from the current step to that step
+            int moveCost = [self costToMoveFromStep:currentStep toAdjacentStep:step];
+            
+            // Check if the step is already in the open list
+            NSUInteger index = [self.spOpenSteps indexOfObject:step];
+            
+            if (index == NSNotFound) { // Not on the open list, so add it
+                
+                // Set the current step as the parent
+                step.parent = currentStep;
+                
+                // The G score is equal to the parent G score + the cost to move from the parent to it
+                step.gScore = currentStep.gScore + moveCost;
+                
+                // Compute the H score which is the estimated movement cost to move from that step to the desired tile coordinate
+                step.hScore = [self computeHScoreFromCoord:step.position toCoord:toTileCoord];
+                
+                // Adding it with the function which is preserving the list ordered by F score
+                [self insertInOpenSteps:step];
+                
+                // Done, now release the step
+                [step release];
+            }
+            else { // Already in the open list
+                
+                [step release]; // Release the freshly created one
+                step = [self.spOpenSteps objectAtIndex:index]; // To retrieve the old one (which has its scores already computed ;-)
+                
+                // Check to see if the G score for that step is lower if we use the current step to get there
+                if ((currentStep.gScore + moveCost) < step.gScore) {
+                    
+                    // The G score is equal to the parent G score + the cost to move from the parent to it
+                    step.gScore = currentStep.gScore + moveCost;
+                    
+                    // Because the G Score has changed, the F score may have changed too
+                    // So to keep the open list ordered we have to remove the step, and re-insert it with
+                    // the insert function which is preserving the list ordered by F score
+                    
+                    // We have to retain it before removing it from the list
+                    [step retain];
+                    
+                    // Now we can removing it from the list without be afraid that it can be released
+                    [self.spOpenSteps removeObjectAtIndex:index];
+                    
+                    // Re-insert it with the function which is preserving the list ordered by F score
+                    [self insertInOpenSteps:step];
+                    
+                    // Now we can release it because the oredered list retain it
+                    [step release];
+                }
+            }
+        }
+        
+    } while ([self.spOpenSteps count] > 0);
+    
+//    if (!pathFound) { // No path found
+//        
+//        NSLog(@"No path found!");
+//    }
 }
 
-/*
-// In "private properties and methods" section
-- (void)insertInOpenSteps:(ShortestPathStep *)step;
-- (int)computeHScoreFromCoord:(CGPoint)fromCoord toCoord:(CGPoint)toCoord;
-- (int)costToMoveFromStep:(ShortestPathStep *)fromStep toAdjacentStep:(ShortestPathStep *)toStep;
 
+- (void)constructPathAndStartAnimationFromStep:(ShortestPathStep *)step {
+    
+	[Common instance].hero.shortestPath = [NSMutableArray array];
+    
+	do {
+		if (step.parent != nil) { // Don't add the last step which is the start position (remember we go backward, so the last one is the origin position ;-)
+			[[Common instance].hero.shortestPath insertObject:step atIndex:0]; // Always insert at index 0 to reverse the path
+		}
+		step = step.parent; // Go backward
+	} while (step != nil); // Until there is no more parents
+    
+    for (ShortestPathStep *s in [Common instance].hero.shortestPath) {
+        NSLog(@"%@", s);
+    }
+}
 // Add these new methods after moveToward
 
 // Insert a path step (ShortestPathStep) in the ordered open steps list (spOpenSteps)
@@ -153,5 +267,5 @@
 	// But it have to be different if we can move diagonally and/or if there is swamps, hills, etc...
 	return 1;
 }
-*/
+
 @end

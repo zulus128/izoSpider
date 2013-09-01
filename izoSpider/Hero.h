@@ -8,7 +8,27 @@
 
 #import "cocos2d.h"
 
-@interface Hero : CCNode
+#define ANIM_DELAY 0.2f
+#define SPRITE_SIZE 117
 
+enum {
+  
+    kDirW,
+    kDirN,
+    kDirE,
+    kDirS
+};
+
+@interface Hero : CCNode {
+    
+    int direction;
+    CCSprite* me;
+}
+
+- (void)popStepAndAnimate;
+- (void) go;
+
+@property (nonatomic, retain) NSMutableArray *shortestPath;
+//@property (assign, readwrite) BOOL moving;
 
 @end

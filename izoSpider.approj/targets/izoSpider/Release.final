@@ -6,6 +6,10 @@
     ], 
     "assets": [
         {
+            "asset": "izoSpider/Resources/Default.png", 
+            "target": "Default.png"
+        }, 
+        {
             "asset": "izoSpider/Resources/Default@2x.png", 
             "target": "Default@2x.png"
         }, 
@@ -16,10 +20,6 @@
         {
             "asset": "izoSpider/Resources/Default-Landscape~ipad.png", 
             "target": "Default-Landscape~ipad.png"
-        }, 
-        {
-            "asset": "izoSpider/Resources/Default.png", 
-            "target": "Default.png"
         }, 
         {
             "asset": "izoSpider/Resources/Icon-72.png", 
@@ -470,12 +470,12 @@
             "target": "mos_extrication_s (13).png"
         }, 
         {
-            "asset": "mos_extrication_s (15).png", 
-            "target": "mos_extrication_s (15).png"
-        }, 
-        {
             "asset": "mos_extrication_s (14).png", 
             "target": "mos_extrication_s (14).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (15).png", 
+            "target": "mos_extrication_s (15).png"
         }, 
         {
             "asset": "mos_extrication_s (16).png", 
@@ -490,12 +490,12 @@
             "target": "mos_extrication_s (18).png"
         }, 
         {
-            "asset": "mos_extrication_s (20).png", 
-            "target": "mos_extrication_s (20).png"
-        }, 
-        {
             "asset": "mos_extrication_s (19).png", 
             "target": "mos_extrication_s (19).png"
+        }, 
+        {
+            "asset": "mos_extrication_s (20).png", 
+            "target": "mos_extrication_s (20).png"
         }, 
         {
             "asset": "mos_fly_s (1).png", 
@@ -554,12 +554,12 @@
             "target": "mos_fly_s (14).png"
         }, 
         {
-            "asset": "mos_fly_s (16).png", 
-            "target": "mos_fly_s (16).png"
-        }, 
-        {
             "asset": "mos_fly_s (15).png", 
             "target": "mos_fly_s (15).png"
+        }, 
+        {
+            "asset": "mos_fly_s (16).png", 
+            "target": "mos_fly_s (16).png"
         }, 
         {
             "asset": "mos_fly_s (17).png", 

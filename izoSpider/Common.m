@@ -7,6 +7,7 @@
 //
 
 #import "Common.h"
+#import "Hero.h"
 
 @implementation Common
 

@@ -9,10 +9,19 @@
 //http://www.raywenderlich.com/4970/how-to-implement-a-pathfinding-with-cocos2d-tutorial
 
 #import "cocos2d.h"
-#import "Hero.h"
 
 #define BACK_LAYER @"bg"
 #define TILE_NET_GID 10
+
+enum {
+    
+    kDirW,
+    kDirN,
+    kDirE,
+    kDirS
+};
+
+@class Hero;
 
 @interface Common : NSObject
 

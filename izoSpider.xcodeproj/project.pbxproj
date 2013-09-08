@@ -153,6 +153,7 @@
 		9CF028FF179FEED000EFBC35 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF028FE179FEED000EFBC35 /* GameLayer.m */; };
 		9CF02912179FF75600EFBC35 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF02911179FF75600EFBC35 /* Common.m */; };
 		9CF02AB317A76766006CE7BE /* ShortestPathStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF02AB217A76766006CE7BE /* ShortestPathStep.m */; };
+		DDCAE3E317DC55FE00BF62C4 /* Mosq.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCAE3E217DC55FE00BF62C4 /* Mosq.m */; };
 		DDEAFBCC17D3082F00CE72BC /* spider_calm_s (1).png in Resources */ = {isa = PBXBuildFile; fileRef = DDEAFBA417D3082F00CE72BC /* spider_calm_s (1).png */; };
 		DDEAFBCD17D3082F00CE72BC /* spider_calm_s (2).png in Resources */ = {isa = PBXBuildFile; fileRef = DDEAFBA517D3082F00CE72BC /* spider_calm_s (2).png */; };
 		DDEAFBCE17D3082F00CE72BC /* spider_calm_s (3).png in Resources */ = {isa = PBXBuildFile; fileRef = DDEAFBA617D3082F00CE72BC /* spider_calm_s (3).png */; };
@@ -632,6 +633,8 @@
 		9CF02911179FF75600EFBC35 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		9CF02AB117A76766006CE7BE /* ShortestPathStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortestPathStep.h; sourceTree = "<group>"; };
 		9CF02AB217A76766006CE7BE /* ShortestPathStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortestPathStep.m; sourceTree = "<group>"; };
+		DDCAE3E117DC55FE00BF62C4 /* Mosq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mosq.h; path = ../Mosq.h; sourceTree = "<group>"; };
+		DDCAE3E217DC55FE00BF62C4 /* Mosq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Mosq.m; path = ../Mosq.m; sourceTree = "<group>"; };
 		DDEAFBA417D3082F00CE72BC /* spider_calm_s (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spider_calm_s (1).png"; sourceTree = "<group>"; };
 		DDEAFBA517D3082F00CE72BC /* spider_calm_s (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spider_calm_s (2).png"; sourceTree = "<group>"; };
 		DDEAFBA617D3082F00CE72BC /* spider_calm_s (3).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spider_calm_s (3).png"; sourceTree = "<group>"; };
@@ -902,6 +905,8 @@
 				9CF02AB217A76766006CE7BE /* ShortestPathStep.m */,
 				9C3BCAA717A63E2E008AE171 /* Hero.h */,
 				9C3BCAA817A63E2E008AE171 /* Hero.m */,
+				DDCAE3E117DC55FE00BF62C4 /* Mosq.h */,
+				DDCAE3E217DC55FE00BF62C4 /* Mosq.m */,
 				9CF028FD179FEED000EFBC35 /* GameLayer.h */,
 				9CF028FE179FEED000EFBC35 /* GameLayer.m */,
 				9CDDAA7717A2B08000A9B41D /* HudLayer.h */,
@@ -1906,6 +1911,7 @@
 				9CDDAA7917A2B08000A9B41D /* HudLayer.m in Sources */,
 				9C3BCAA917A63E2E008AE171 /* Hero.m in Sources */,
 				9CF02AB317A76766006CE7BE /* ShortestPathStep.m in Sources */,
+				DDCAE3E317DC55FE00BF62C4 /* Mosq.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

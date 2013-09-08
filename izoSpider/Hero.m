@@ -8,7 +8,6 @@
 
 #import "Hero.h"
 #import "ShortestPathStep.h"
-#import "Common.h"
 
 @implementation Hero
 

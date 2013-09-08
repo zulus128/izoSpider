@@ -7,17 +7,10 @@
 //
 
 #import "cocos2d.h"
+#import "Common.h"
 
 #define ANIM_DELAY 0.2f
 #define SPRITE_SIZE 117
-
-enum {
-  
-    kDirW,
-    kDirN,
-    kDirE,
-    kDirS
-};
 
 @interface Hero : CCNode {
     
